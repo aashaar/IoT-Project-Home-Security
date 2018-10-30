@@ -8,5 +8,6 @@ void loop() {
   if(Serial.available() > 0)
   {
     Serial.write(Serial.read());
+    delay(50);
   }
 }
