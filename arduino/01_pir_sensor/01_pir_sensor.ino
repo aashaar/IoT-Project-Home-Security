@@ -1,3 +1,11 @@
+
+#include<XBee.h>
+
+XBee xbee = XBee();
+XBeeAddress64 addr64 = XBeeAddress64(0x000000000, 0x000000000);
+uint8_t payload[] = {0};
+ZBTxRequest tx = ZBTxRequest(addr64,payload, sizeof(payload));
+
 //the time we give the sensor to calibrate (10-60 secs according to the datasheet)
 int calibrationTime = 30;       
  
@@ -19,10 +27,11 @@ int ledPin = 13;
 //SETUP
 void setup(){
   Serial.begin(9600);
+  
   pinMode(pirPin, INPUT);
   pinMode(ledPin, OUTPUT);
   digitalWrite(pirPin, LOW);
- 
+  xbee.setSerial(Serial);
   //give the sensor some time to calibrate
   Serial.print("calibrating sensor ");
     for(int i = 0; i < calibrationTime; i++){
@@ -31,6 +40,7 @@ void setup(){
       }
     Serial.println(" done");
     Serial.println("SENSOR ACTIVE");
+    
     delay(50);
   }
  
@@ -47,6 +57,7 @@ void loop(){
          Serial.print("motion detected at ");
          Serial.print(millis()/1000);
          Serial.println(" sec");
+         xbee.send(tx);
          delay(50);
          }        
          takeLowTime = true;
