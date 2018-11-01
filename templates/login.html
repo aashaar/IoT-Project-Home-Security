@@ -117,17 +117,18 @@
     <form action="" method="post" id="Login">
 
         <div class="form-group">
-            <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}" class="form-control" id="inputUserName">
+            <input type="text" placeholder="Username" name="username" value="{{request.form.username}}"
+                   class="form-control" id="inputUserName">
         </div>
 
         <div class="form-group">
-            <input type="password" placeholder="Password" name="password" value="{{
-          request.form.password }}" class="form-control" id="inputPassword">
+            <input type="password" placeholder="Password" name="password" value="{{request.form.password}}"
+                   class="form-control" id="inputPassword">
         </div>
 
         <input class="btn btn-primary" type="submit" value="Login">
     </form>
+
     {% if error %}
     <p class="error"><strong>Error:</strong> {{ error }}
         {% endif %}
