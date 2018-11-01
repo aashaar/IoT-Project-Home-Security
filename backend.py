@@ -39,7 +39,7 @@ def login():
 
 @app.route('/success')
 def success():
-    return "You have successfully logged in"
+    return render_template('success.html')
 
 
 if __name__ == '__main__':
