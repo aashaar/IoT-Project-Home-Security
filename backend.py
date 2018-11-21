@@ -9,7 +9,7 @@ def check_password(hashed_password, user_password):
 
 
 def validate(username, password):
-    con = sqlite3.connect('static/user.db')
+    con = sqlite3.connect('static/User.db')
     completion = False
     with con:
         cur = con.cursor()
