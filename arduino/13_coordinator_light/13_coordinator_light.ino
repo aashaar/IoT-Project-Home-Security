@@ -3,7 +3,7 @@ byte RFin_bytes[19];
 unsigned long starttime;
 #define motion 0x4D
 #define positiveAck 0x44 
-#define negativeAck 0x44 
+#define negativeAck 0x46 
 
 void setup() {
   // put your setup code here, to run once:
@@ -214,7 +214,7 @@ void deactivateLight()
   
   Serial.write(0xD3); // AT command - Pin D3
 
-  Serial.write(0x4); // Parameter Value. (HIGH)
+  Serial.write(0x4); // Parameter Value. (LOW)
   
   //checksum - sum of everything that is non-zero after 'low part of length'
   long checksum = 0x17 + 0x13 + 0xA2 + 0x41 + 0x08 + 0x09 + 0xDD + 0xFF + 0xFE + 0x02 +0xD3 +0x4;

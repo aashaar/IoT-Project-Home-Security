@@ -2,8 +2,8 @@ byte RFin_bytes[19];
 #define MAX_MILLIS_TO_WAIT 15000  //timeout
 unsigned long starttime;
 #define motion 0x4D
-#define positiveAck 0x44 
-#define negativeAck 0x44 
+#define positiveAck 0x44 // codeword "D"
+#define negativeAck 0x46 // codeword "F"
 
 void setup() {
   // put your setup code here, to run once:
