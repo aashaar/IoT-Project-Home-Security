@@ -7,11 +7,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def something():
-    hists = os.listdir('images')
-    hists = [file for file in hists]
+    hists = os.listdir('static/images')
+    hists = [os.path.join(os.getcwd() + '/static/images', file) for file in hists]
     return render_template('report.html', hists=hists)
 
 
 if __name__ == '__main__':
     app.run()
-    something()
+
+# import os
+#
+# path = os.getcwd() + "/images"
+# list_of_files = {}
+#
+# for filename in os.listdir(path):
+#     list_of_files[filename] = "http://127.0.0.1/" + filename
