@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def something():
-    hists = os.listdir('static/images')
-    hists = [os.path.join(os.getcwd() + '/static/images', file) for file in hists]
-    return render_template('report.html', hists=hists)
+    pics = os.listdir('./static/images')
+    # hists = [os.path.join(os.getcwd() + '/static/images', file) for file in hists]
+    return render_template('report.html', hists=pics)
 
 
 if __name__ == '__main__':
