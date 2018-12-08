@@ -1,5 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request, g
 import sqlite3
+
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 
 app = Flask(__name__)
 
@@ -37,9 +38,16 @@ def login():
     return render_template('login.html', error=error)
 
 
-@app.route('/success')
+@app.route('/success', methods=['GET', 'POST'])
 def success():
+    if request.method == 'POST':
+        return redirect((url_for('camera')))
     return render_template('success.html')
+
+
+@app.route('/camera')
+def camera():
+    return jsonify({'done': 0})
 
 
 if __name__ == '__main__':
