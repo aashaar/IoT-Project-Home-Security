@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>1</repeat_times>
+  <repeat_period>500</repeat_period>
+  <frames_list>
+    <frame name="HIGH">
+      <payload>7E001017010013A200410809DDFFFE0244330588</payload>
+    </frame>
+    <frame name="LOW">
+      <payload>7E001017010013A200410809DDFFFE0244330489</payload>
+    </frame>
+    <frame name="frame_0">
+      <payload>7E001310010013A200410809DDFFFE000068656C6C6FF9</payload>
+    </frame>
+  </frames_list>
+</data>

@@ -37,7 +37,7 @@ void setup(){
 ////////////////////////////
 //LOOP
 void loop(){
-     
+     /*
      if(Serial.available()>0)
      {
         byte receivedMessage = Serial.read();
@@ -49,12 +49,12 @@ void loop(){
           Serial.println(flag);
         }
      }
-     
-     if(digitalRead(pirPin) == HIGH && flag == true){
+     */
+     if(digitalRead(pirPin) == HIGH){
        digitalWrite(ledPin, HIGH);   //the led visualizes the sensors output pin state
-       //if(lockLow){ 
+       if(lockLow){ 
          //makes sure we wait for a transition to LOW before any further output is made:
-         //lockLow = false;    
+         lockLow = false;    
          delay(1500); // delay to let communication between router & cooordinator 
          Serial.println("M"); // send codeword to Coordinator to indicate motion is detected
          flag = false;     
@@ -63,13 +63,13 @@ void loop(){
          //Serial.print(millis()/1000);
          //Serial.println(" sec");
          delay(50);
-         //}        
-         //takeLowTime = true;
+         }        
+         takeLowTime = true;
        }
  
      if(digitalRead(pirPin) == LOW){      
        digitalWrite(ledPin, LOW);  //the led visualizes the sensors output pin state
- /*
+ 
        if(takeLowTime){
         lowIn = millis();          //save the time of the transition from high to LOW
         takeLowTime = false;       //make sure this is only done at the start of a LOW phase
@@ -79,13 +79,13 @@ void loop(){
        if(!lockLow && millis() - lowIn > pause){ 
            //makes sure this block of code is only executed again after
            //a new motion sequence has been detected
-           lockLow = true;                       
+           lockLow = true;
+           Serial.println("M"); // send codeword to Coordinator to indicate motion is detected                       
            //Serial.print("motion ended at ");      //output
            //Serial.print((millis() - pause)/1000);
            //Serial.println(" sec");
            delay(50);
            }
        }
- */
  }
 }

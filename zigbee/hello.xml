@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>1</repeat_times>
+  <repeat_period>500</repeat_period>
+  <frames_list>
+    <frame name="A">
+      <payload>7E000F10000013A200415D76BFFFFE00004129</payload>
+    </frame>
+    <frame name="frame_1">
+      <payload>7E001310000013A200415D76BFFFFE000068656C6C6F56</payload>
+    </frame>
+  </frames_list>
+</data>
