@@ -8,6 +8,7 @@ unsigned long starttime;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  Serial.println("Coordinator")
   
   //pinMode(ledPin, OUTPUT);
   
