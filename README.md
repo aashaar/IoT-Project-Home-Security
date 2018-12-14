@@ -1,3 +1,2 @@
-https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/testing-a-pir
-
-Arduino+XBee: Transfer temperature from router to coordinator: https://www.youtube.com/watch?v=mIBq0KLqWLA&t=92s
+This project is an implementation of an Automated Home Security System. Please refer the project report (IoT Project Final Report.pdf) for more details.
+The code for prototype is present in the folder 'Prototype code' & the code for enhanced version is present in the folder 'Enhanced Pi Camera code'.
