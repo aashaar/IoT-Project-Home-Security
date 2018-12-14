@@ -160,7 +160,7 @@ void activateLight()
   Serial.write(0x7E); // start byte
   Serial.write((byte)0x00); //high part of length
   Serial.write(0x10); //low part of length, the number of bytes that follow this line excluding Checksum
-  Serial.write(0x17); // API frame type: Transmit Request
+  Serial.write(0x17); // API frame type:  Remote AT Command: Send a wireless command to another xbee.
   Serial.write((byte)0x0); //frame id set to zero for no reply
   // Following 8 bytes are destination address - MAC address of PIR Sensor's receiver zigbee - 0013A200410809D7
   Serial.write(0x00);
@@ -178,7 +178,7 @@ void activateLight()
   Serial.write(0xFE);
   // network address ends
 
-  Serial.write(0x02); //set remote command options to 02
+  Serial.write(0x02); //set remote command options to 02. this will apply changes in destination xbee as soon as it receives this packet.
   
   Serial.write(0x44); // AT command - Pin D3
   Serial.write(0x33); // AT command - Pin D3
@@ -197,7 +197,7 @@ void deactivateLight()
   Serial.write(0x7E); // start byte
   Serial.write((byte)0x00); //high part of length
   Serial.write(0x10); //low part of length, the number of bytes that follow this line excluding Checksum
-  Serial.write(0x17); // API frame type: Transmit Request
+  Serial.write(0x17); // API frame type:  Remote AT Command: Send a wireless command to another xbee.
   Serial.write((byte)0x0); //frame id set to zero for no reply
   // Following 8 bytes are destination address - MAC address of PIR Sensor's receiver zigbee - 0013A200410809D7
   Serial.write(0x00);
@@ -215,7 +215,7 @@ void deactivateLight()
   Serial.write(0xFE);
   // network address ends
 
-  Serial.write(0x02); //set remote command options to 02
+  Serial.write(0x02); //set remote command options to 02. this will apply changes in destination xbee as soon as it receives this packet.
   
   Serial.write(0x44); // AT command - Pin D3
   Serial.write(0x33); // AT command - Pin D3
